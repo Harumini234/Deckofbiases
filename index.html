@@ -9,15 +9,20 @@
 <body>
     <div class="container">
         <h1>🎲 Random Name Selector</h1>
-        <textarea id="namesInput" placeholder="Enter names separated by commas..."></textarea>
+        
+        <h3>Available Players:</h3>
+        <ul id="nameList"></ul> <!-- Names will be auto-filled here -->
+
         <div class="buttons">
-            <button onclick="selectNames()">🎯 Select 3 Names</button>
+            <button onclick="selectNames()">🎯 Select 3 Players</button>
             <button class="reset" onclick="resetSelection()">🔄 Reset</button>
         </div>
-        <h2>Selected Names:</h2>
+        
+        <h2>Selected Players:</h2>
         <p id="selectedNames" class="fade-in"></p>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
