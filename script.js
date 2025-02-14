@@ -12,7 +12,6 @@ function selectNames() {
         return;
     }
 
-    // Get available names (excluding last selected names)
     let availableNames = names.filter(name => !lastSelectedNames.includes(name));
 
     if (availableNames.length < 3) {
@@ -20,18 +19,20 @@ function selectNames() {
         return;
     }
 
-    // Randomly select 3 names
     let chosen = [];
     while (chosen.length < 3) {
         let randIndex = Math.floor(Math.random() * availableNames.length);
         chosen.push(availableNames.splice(randIndex, 1)[0]);
     }
 
-    // Update the stored selections
-    lastSelectedNames = [...chosen]; // Store current selection for next round
+    lastSelectedNames = [...chosen];
     localStorage.setItem(LAST_SELECTED_KEY, JSON.stringify(lastSelectedNames));
 
-    document.getElementById("selectedNames").innerText = chosen.join(", ");
+    // Add fade-in effect
+    let selectedNamesElement = document.getElementById("selectedNames");
+    selectedNamesElement.innerText = chosen.join(", ");
+    selectedNamesElement.classList.remove("show");
+    setTimeout(() => selectedNamesElement.classList.add("show"), 50);
 }
 
 function resetSelection() {
