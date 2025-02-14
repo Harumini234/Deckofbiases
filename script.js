@@ -1,18 +1,23 @@
 const STORAGE_KEY = "selectedNames";
 const LAST_SELECTED_KEY = "lastSelectedNames";
 
-let selectedNames = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+// Predefined names (Your teammates' names)
+const allNames = ["Diego", "Sofi", "Mike", "Barbs", "Isa", "Fer", "Gonza", "Juana", "Mateo", "Nat"];
+
 let lastSelectedNames = JSON.parse(localStorage.getItem(LAST_SELECTED_KEY)) || [];
 
+// Display names on page
+function displayNames() {
+    let nameList = document.getElementById("nameList");
+    nameList.innerHTML = allNames.map(name => {
+        let isExcluded = lastSelectedNames.includes(name);
+        return `<li class="${isExcluded ? 'excluded' : ''}">${name}</li>`;
+    }).join("");
+}
+
+// Select random names
 function selectNames() {
-    let names = document.getElementById("namesInput").value.split(",").map(n => n.trim()).filter(n => n);
-
-    if (names.length < 3) {
-        alert("Enter at least 3 names.");
-        return;
-    }
-
-    let availableNames = names.filter(name => !lastSelectedNames.includes(name));
+    let availableNames = allNames.filter(name => !lastSelectedNames.includes(name));
 
     if (availableNames.length < 3) {
         alert("Not enough names left. Reset or wait for the next round.");
@@ -28,16 +33,21 @@ function selectNames() {
     lastSelectedNames = [...chosen];
     localStorage.setItem(LAST_SELECTED_KEY, JSON.stringify(lastSelectedNames));
 
-    // Add fade-in and bounce effect
-    let selectedNamesElement = document.getElementById("selectedNames");
-    selectedNamesElement.innerText = chosen.join(", ");
-    selectedNamesElement.classList.remove("show");
-    setTimeout(() => selectedNamesElement.classList.add("show"), 50);
+    // Update UI
+    document.getElementById("selectedNames").innerText = chosen.join(", ");
+    document.getElementById("selectedNames").classList.remove("show");
+    setTimeout(() => document.getElementById("selectedNames").classList.add("show"), 50);
+
+    displayNames();
 }
 
-
+// Reset function
 function resetSelection() {
     localStorage.removeItem(LAST_SELECTED_KEY);
     lastSelectedNames = [];
     document.getElementById("selectedNames").innerText = "";
+    displayNames();
 }
+
+// Load initial names
+displayNames();
