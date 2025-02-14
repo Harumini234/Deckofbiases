@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e1e2f;
+    color: #f8f8f2;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: #282a36;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #bd93f9;
+    background: #44475a;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+}
+
+/* Buttons */
+.buttons {
+    margin: 15px 0;
+}
+
+button {
+    background: #50fa7b;
+    color: #282a36;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #40d97a;
+}
+
+.reset {
+    background: #ff5555;
+    color: white;
+}
+
+.reset:hover {
+    background: #ff2e2e;
+}
+
+/* Selected Names */
+#selectedNames {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f1fa8c;
+    margin-top: 10px;
+}
+
+/* Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
