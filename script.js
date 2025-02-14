@@ -28,12 +28,13 @@ function selectNames() {
     lastSelectedNames = [...chosen];
     localStorage.setItem(LAST_SELECTED_KEY, JSON.stringify(lastSelectedNames));
 
-    // Add fade-in effect
+    // Add fade-in and bounce effect
     let selectedNamesElement = document.getElementById("selectedNames");
     selectedNamesElement.innerText = chosen.join(", ");
     selectedNamesElement.classList.remove("show");
     setTimeout(() => selectedNamesElement.classList.add("show"), 50);
 }
+
 
 function resetSelection() {
     localStorage.removeItem(LAST_SELECTED_KEY);
