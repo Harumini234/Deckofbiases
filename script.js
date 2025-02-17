@@ -50,12 +50,11 @@ function selectNames(availableNames) {
     localStorage.setItem(LAST_SELECTED_KEY, JSON.stringify(lastSelectedNames));
 
     // Update UI
-    let rouletteText = document.getElementById("rouletteText");
+     let rouletteText = document.getElementById("rouletteText");
     rouletteText.innerText = "✅ " + chosen.join(", ");
 
     let selectedNamesElement = document.getElementById("selectedNames");
-    selectedNamesElement.innerText = chosen.join(", ");
-    selectedNamesElement.classList.add("show");
+    selectedNamesElement.innerText = chosen.join(", "); // Directly set the names without fade effect
 }
 
 // Reset function
