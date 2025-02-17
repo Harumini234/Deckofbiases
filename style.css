@@ -9,16 +9,21 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 /* Container */
 .container {
+    width: 100%;
     max-width: 500px;
-    margin: auto;
     background: #282a36;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 /* Roulette Box */
@@ -38,6 +43,7 @@ body {
     overflow: hidden;
 }
 
+
 /* Roulette Spin Animation */
 .spin {
     animation: spinText 0.1s linear infinite;
@@ -49,6 +55,13 @@ body {
 }
 
 /* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
 button {
     background: #50fa7b;
     color: #282a36;
@@ -60,14 +73,14 @@ button {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     font-weight: 500;
-    position: relative;
-    overflow: hidden;
+    width: 80%;
 }
 
 button:hover {
     background: #40d97a;
     transform: scale(1.05);
 }
+
 
 /* Reset Button */
 .reset {
@@ -89,6 +102,7 @@ button:hover {
     transform: translateY(10px);
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
+
 
 /* Bounce Effect */
 .fade-in.show {
