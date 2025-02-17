@@ -53,8 +53,10 @@ function selectNames(availableNames) {
     let rouletteText = document.getElementById("rouletteText");
     rouletteText.innerText = "✅ " + chosen.join(", ");
 
-   let selectedNamesElement = document.getElementById("selectedNames");
-selectedNamesElement.innerText = chosen.join(", ");
+    let selectedNamesElement = document.getElementById("selectedNames");
+    selectedNamesElement.innerText = chosen.join(", ");
+    selectedNamesElement.classList.add("show");
+}
 
 // Reset function
 function resetSelection() {
