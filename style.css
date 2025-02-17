@@ -21,26 +21,62 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Name List */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-ul li {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 12px;
+/* Roulette Box */
+#rouletteBox {
+    font-size: 24px;
+    font-weight: bold;
     background: #44475a;
-    border-radius: 8px;
-    transition: 0.3s;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 12px;
+    color: #f1fa8c;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-ul li.excluded {
-    opacity: 0.5;
-    text-decoration: line-through;
+/* Roulette Spin Animation */
+.spin {
+    animation: spinText 0.1s linear infinite;
+}
+
+@keyframes spinText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-10px); }
+}
+
+/* Buttons */
+button {
+    background: #50fa7b;
+    color: #282a36;
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #40d97a;
+    transform: scale(1.05);
+}
+
+/* Reset Button */
+.reset {
+    background: #ff5555;
+    color: white;
+}
+
+.reset:hover {
+    background: #ff2e2e;
 }
 
 /* Selected Players */
@@ -54,6 +90,7 @@ ul li.excluded {
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
+/* Bounce Effect */
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
