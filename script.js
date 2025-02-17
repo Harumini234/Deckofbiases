@@ -53,8 +53,10 @@ function selectNames(availableNames) {
     let rouletteText = document.getElementById("rouletteText");
     rouletteText.innerText = "✅ " + chosen.join(", ");
 
-    let selectedNamesElement = document.getElementById("selectedNames");
+   let selectedNamesElement = document.getElementById("selectedNames");
     selectedNamesElement.innerText = chosen.join(", ");
+    
+    // Add 'show' class to trigger fade-in effect
     selectedNamesElement.classList.add("show");
 }
 
@@ -63,5 +65,5 @@ function resetSelection() {
     localStorage.removeItem(LAST_SELECTED_KEY);
     lastSelectedNames = [];
     document.getElementById("selectedNames").innerText = "";
-    document.getElementById("rouletteText").innerText = "🎲 Spinning...";
+    document.getElementById("rouletteText").innerText = "🎲 Por seleccionar";
 }
