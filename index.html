@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Name Selector</title>
+    <title>Neovantas MEX - Deck of Biases </title>
+    <title>Selección de participantes </title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎲 Random Name Selector</h1>
-        
-        <h3>Available Players:</h3>
-        <ul id="nameList"></ul> <!-- Names will be auto-filled here -->
+        <h1>🎡 Random Name Roulette</h1>
+
+         <div id="rouletteBox">
+            <p id="rouletteText">🎲 Spinning...</p>
+        </div>
 
         <div class="buttons">
-            <button onclick="selectNames()">🎯 Select 3 Players</button>
+            <button onclick="startRoulette()">🎯 Spin the Wheel</button>
             <button class="reset" onclick="resetSelection()">🔄 Reset</button>
         </div>
         
@@ -25,4 +27,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
