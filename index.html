@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+     <div class="container">
         <h1>Deck of Biases - Neovantas MEX</h1>
         <h1>🎡 Ruleta de participantes</h1>
 
-         <div id="rouletteBox">
-            <p id="rouletteText">🎲 Seleccionando...</p>
-        </div>
+        <!-- Roulette Box -->
+        <div id="rouletteBox">🎲</div>
 
+        <!-- Selected Names Output -->
+        <div id="selectedNames"></div>
+
+        <!-- Buttons -->
         <div class="buttons">
             <button onclick="startRoulette()">🎯 Inicia la selección</button>
             <button class="reset" onclick="resetSelection()">🔄 Reset</button>
