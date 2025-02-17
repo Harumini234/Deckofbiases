@@ -13,7 +13,7 @@ body {
     background-color: #1e1e2f;
     color: #f8f8f2;
     
-    /* Full viewport height & centering */
+    /* Force full-page centering */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,11 +31,12 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     
-    /* Center everything inside */
+    /* Center all content inside */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  /* Forces children to center */
     justify-content: center;
+    text-align: center;
 }
 
 /* Roulette Box */
@@ -50,7 +51,7 @@ body {
     color: #f1fa8c;
     height: 40px;
     
-    /* Center text inside */
+    /* Ensure text is centered */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +69,7 @@ body {
     100% { transform: translateX(-10px); }
 }
 
-/* Buttons */
+/* 🔘 Button container */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -77,6 +78,7 @@ body {
     align-items: center;
 }
 
+/* 🔘 Buttons */
 button {
     background: #50fa7b;
     color: #282a36;
@@ -96,7 +98,8 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Reset Button */
+
+/* 🔴 Reset Button */
 .reset {
     background: #ff5555;
     color: white;
@@ -106,7 +109,7 @@ button:hover {
     background: #ff2e2e;
 }
 
-/* Selected Players */
+/* ✅ Selected Names */
 #selectedNames {
     font-size: 24px;
     font-weight: bold;
@@ -118,8 +121,7 @@ button:hover {
     text-align: center;
 }
 
-
-/* Bounce Effect */
+/* 🎉 Bounce Effect */
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
