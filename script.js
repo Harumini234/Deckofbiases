@@ -54,11 +54,7 @@ function selectNames(availableNames) {
     rouletteText.innerText = "✅ " + chosen.join(", ");
 
    let selectedNamesElement = document.getElementById("selectedNames");
-    selectedNamesElement.innerText = chosen.join(", ");
-    
-    // Add 'show' class to trigger fade-in effect
-    selectedNamesElement.classList.add("show");
-}
+selectedNamesElement.innerText = chosen.join(", ");
 
 // Reset function
 function resetSelection() {
