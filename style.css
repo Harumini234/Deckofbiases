@@ -17,36 +17,56 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Roulette Box */
-#rouletteBox {
-    font-size: 24px;
-    font-weight: bold;
-    background: #e6f7ff; /* ✅ Lightest blue */
-    padding: 15px;
-    margin: 20px auto;
-    width: 80%;
+body {
+    font-family: "Trebuchet MS", "Century Gothic", sans-serif;
+    background-color: #b3e0ff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 25px;
     border-radius: 12px;
-    color: #005f99; /* ✅ Dark blue text */
-    height: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Wheel Styling */
+#rouletteBox {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    margin: 20px auto;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: #e6f7ff;
+    border: 5px solid #0077a8;
+    position: relative;
 }
 
-/* Roulette Spin Animation */
-.spin {
-    animation: spinText 0.1s linear infinite;
+canvas {
+    border-radius: 50%;
+    background: white;
 }
 
-@keyframes spinText {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-10px); }
+/* Name Input */
+#nameInput {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #0077a8;
+    border-radius: 8px;
 }
 
 /* Buttons */
 button {
-    background: #008cba; /* ✅ Nice blue */
+    background: #008cba;
     color: white;
     font-size: 18px;
     padding: 12px 25px;
@@ -56,8 +76,6 @@ button {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     font-weight: 500;
-    position: relative;
-    overflow: hidden;
 }
 
 button:hover {
@@ -75,25 +93,11 @@ button:hover {
     background: #ff2e2e;
 }
 
-/* Selected Players */
+/* Winner Display */
 #selectedNames {
     font-size: 24px;
     font-weight: bold;
-    color: #004d80; /* ✅ Darker blue */
+    color: #004d80;
     margin-top: 10px;
-    opacity: 1;  /* Always visible */
-    transform: translateY(0);  /* No transition */
 }
 
-/* Bounce Effect */
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-    animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-    0% { transform: translateY(-10px); }
-    50% { transform: translateY(5px); }
-    100% { transform: translateY(0); }
-}
